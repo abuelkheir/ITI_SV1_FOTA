@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login Page with Username and Password Example</title>
+    <title>Fota Login</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="./Styles.css">
 
@@ -12,10 +12,11 @@
 <body>
 
     <!-- Start of login form -->
+
     <body class="align">
         <div class="grid">
-            <!-- Login form -->
-            <form action="UploadPage.html" method="POST" class="form login">
+            <!-- Login form action="UploadPage.html" -->
+            <form id="loginForm" method="POST" class="form login">
                 <div class="form__field">
                     <label for="login__username"><svg class="icon">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
@@ -36,11 +37,7 @@
             </form>
             <!-- End of login form -->
 
-            <!-- Registration link -->
-            <p class="text--center">Not a member? <a href="#">Sign up now</a> <svg class="icon">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right">
-                    </use>
-                </svg></p>
+            </svg></p>
         </div>
     </body>
     <!-- End of login form -->
@@ -61,27 +58,7 @@
         </symbol>
     </svg>
 
-    <!-- JavaScript code for login form validation -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const loginForm = document.getElementById("login-form");
-        
-          loginForm.addEventListener("submit", function (event) {
-            const usernameInput = document.getElementById("login__username");
-            const passwordInput = document.getElementById("login__password");
-        
-            // Check if the username and password match "ahmed"
-            if (usernameInput.value.trim() === "ahmed" && passwordInput.value.trim() === "ahmed") {
-              // Successful login
-              alert("Login successful!");
-            } else {
-              // Invalid login, display an alert
-              alert("Invalid username or password.");
-              event.preventDefault(); // Prevent form submission
-            }
-          });
-        });
-    </script>
+    <script type="text/javascript" src="./login.js"></script>
 
 </body>
 
