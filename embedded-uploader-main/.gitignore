@@ -1,0 +1,10 @@
+# nodejs binary
+node_modules/
+.npmrc
+.editorconfig
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# misc
+.vscode/*
