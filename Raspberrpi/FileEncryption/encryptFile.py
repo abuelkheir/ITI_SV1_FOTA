@@ -48,4 +48,4 @@ def encrypt_file(input_path, output_path, public_key_filename, aes_key_filename)
         encrypted_file.write(ciphertext)
 
 if __name__ == "__main__":
-    encrypt_file('TEST_256KB.hex', 'encrypted_output.enc', 'public.pem', 'aes_key.txt')
+    encrypt_file('weird.hex', 'encrypted_weird.enc', 'public.pem', 'aes_key.txt')
