@@ -15,19 +15,14 @@ def is_internet_on():
     return False
 
 
-# Check if the internet is on
-if is_internet_on():
-    print("Internet is on")
-    
-else:
-    print("Internet is off")
+
 
 
 # Function to get the remote timestamp with an applied time offset
 def get_remote_timestamp_with_offset(ftp, remote_filename, time_offset_seconds):
     remote_timestamp_str = ftp.voidcmd("MDTM " + remote_filename)[4:].strip()
     remote_timestamp = datetime.strptime(remote_timestamp_str, "%Y%m%d%H%M%S")
-    remote_timestamp_corrected = remote_timestamp - \
+    remote_timestamp_corrected = remote_timestamp + \
         timedelta(seconds=time_offset_seconds)
     return remote_timestamp_corrected
 
@@ -63,7 +58,7 @@ ftp = FTP(server)
 ftp.login(user=username, passwd=password)
 ftp.cwd('embedded')
 
-remote_filename = 'weird.hex'
+remote_filename = 'encrypted_weird.enc'
 local_directory = full_path
 local_file_path = os.path.join(local_directory, remote_filename)
 
