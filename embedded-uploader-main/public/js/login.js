@@ -1,28 +1,34 @@
+// Wait for the HTML document to be fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', function () {
-  document
-    .getElementById('loginForm')
-    .addEventListener('submit', function (event) {
+  
+  // Add an event listener to the login form
+  document.getElementById('loginForm').addEventListener('submit', function (event) {
+    
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    
+    // Get references to the username and password input fields
+    const usernameInput = document.getElementById('login__username');
+    const passwordInput = document.getElementById('login__password');
+
+    // Check if the entered username and password match "ahmed"
+    if (usernameInput.value.trim() === 'ahmed' && passwordInput.value.trim() === 'ahmed') {
+      
+      // Successful login, display an alert
+      alert('Login successful!');
+      
+      // Delay the redirection to another file by 3 seconds
+      setTimeout(function () {
+        // Redirect to another HTML file (replace 'UploadPage.html' with the desired file name)
+        window.location.href = 'UploadPage.html';
+      }, 3000);
+    } else {
+      
+      // Invalid login, display an alert
+      alert('Invalid username or password.');
+      
+      // Prevent the form submission
       event.preventDefault();
-      const usernameInput = document.getElementById('login__username');
-      const passwordInput = document.getElementById('login__password');
-
-      // Check if the username and password match "ahmed"
-      if (
-        usernameInput.value.trim() === 'ahmed' &&
-        passwordInput.value.trim() === 'ahmed'
-      ) {
-        // Successful login
-        alert('Login successful!');
-        // event.preventDefault();
-
-        setTimeout(function () {
-          // Navigate to another file after a 3-second delay
-          window.location.href = 'UploadPage.html'; // Replace with the desired file name
-        }, 1000);
-      } else {
-        // Invalid login, display an alert
-        alert('Invalid username or password.');
-        event.preventDefault(); // Prevent form submission
-      }
-    });
+    }
+  });
 });
